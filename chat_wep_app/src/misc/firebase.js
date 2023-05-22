@@ -1,4 +1,7 @@
+
 import firebase from "firebase/app";
+import 'firebase/auth';
+import 'firebase/database';
 const config = {
   apiKey: "AIzaSyCwU4954ZzMQSRcqqycO-ST82Se_RraZJA",
   authDomain: "chat-1406d.firebaseapp.com",
@@ -10,3 +13,6 @@ const config = {
 
 // Initialize Firebase
 const app = firebase.initializeApp(config);
+export const auth=app.auth()// import auth libaray from firebase.get auth object to interact with firebase. 
+//with help of this object will manage facebook and google sign in
+export const database=app.database()//import db to store new user signed data
