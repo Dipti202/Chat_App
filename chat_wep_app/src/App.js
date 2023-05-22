@@ -4,9 +4,11 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import './styles/main.scss'
 import {Switch} from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
+import { ProfileProvider } from './context/profile.context';
 function App() {
   return (
-    <Switch>
+    <ProfileProvider>
+ <Switch>
       <PublicRoute path="/sign">
     <SignIn/>
     
@@ -15,6 +17,8 @@ function App() {
         <Home/>
       </PrivateRoute>
     </Switch>
+   
+    </ProfileProvider>
    
       
   );
